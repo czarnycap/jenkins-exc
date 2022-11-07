@@ -8,6 +8,27 @@ services:
       - 8080:8080
     volumes:
       - jenkins_home_cicd:/var/jenkins_home
+
+  postgresql:
+    image: postgres:bullseye
+    container_name: postgresql_artifactory
+    ports:
+     - 5432:5432
+    environment:
+     - POSTGRES_DB=artifactory
+     # The following must match the DB_USER and DB_PASSWORD values passed to Artifactory
+     - POSTGRES_USER=artifactory
+     - POSTGRES_PASSWORD=password
+    volumes:
+     - postgresql_artifactory:/var/lib/postgresql/data
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
 volumes:
   jenkins_home_cicd:
+    external: true
+  postgresql_artifactory:
     external: true
