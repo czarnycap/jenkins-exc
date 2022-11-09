@@ -6,29 +6,73 @@ services:
     ports: 
       - 50000:50000
       - 8080:8080
+    networks:
+      - jenkinsnet
     volumes:
       - jenkins_home_cicd:/var/jenkins_home
-
-  postgresql:
+#todo artifactory
+  # artifactory:
+  #   image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+  #   container_name: artifactory
+  #   ports:
+  #     - 8081:8081
+  #     - 8082:8082
+  #   networks:
+  #     - jenkinsnet
+  #   volumes: 
+  #     - artifactory_data:/var/opt/jfrog/artifactory
+  # postgresql_artifactory:
+  #   image: postgres:bullseye
+  #   container_name: postgresql_artifactory
+  #   ports:
+  #    - 5432:5432
+  #   environment:
+  #    - POSTGRES_DB=artifactory
+  #    # The following must match the DB_USER and DB_PASSWORD values passed to Artifactory
+  #    - POSTGRES_USER=artifactory
+  #    - POSTGRES_PASSWORD=password
+  #   volumes:
+  #    - postgresql_artifactory:/var/lib/postgresql/data
+  #   restart: always
+  #   networks:
+  #     - jenkinsnet
+  #   ulimits:
+  #     nproc: 65535
+  #     nofile:
+  #       soft: 32000
+  #       hard: 40000
+  postgressonar:
     image: postgres:bullseye
-    container_name: postgresql_artifactory
-    ports:
-     - 5432:5432
+    container_name: postgressonar
+    networks:
+      - jenkinsnet
     environment:
-     - POSTGRES_DB=artifactory
-     # The following must match the DB_USER and DB_PASSWORD values passed to Artifactory
-     - POSTGRES_USER=artifactory
-     - POSTGRES_PASSWORD=password
+     - POSTGRES_USER=sonar
+     - POSTGRES_PASSWORD=sonarpasswd
     volumes:
-     - postgresql_artifactory:/var/lib/postgresql/data
-    restart: always
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 32000
-        hard: 40000
+     - postgresql_sonar:/var/lib/postgresql/data
+  sonarqube:
+    image: sonarqube:lts
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+      - "9092:9092"
+    networks:
+      - jenkinsnet
+    environment:
+      SONARQUBE_JDBC_USERNAME: sonar
+      SONARQUBE_JDBC_PASSWORD: sonarpasswd
+      SONARQUBE_JDBC_URL: "jdbc:postgresql://postgressonar:5432/sonar"
+    depends_on:
+      - postgressonar
 volumes:
   jenkins_home_cicd:
     external: true
   postgresql_artifactory:
     external: true
+  postgresql_sonar:
+    external: true
+  artifactory_data:
+    external: true
+networks:
+  jenkinsnet:
