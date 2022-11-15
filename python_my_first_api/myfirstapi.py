@@ -20,4 +20,9 @@ def read_remote_csv():
     output = pd.read_csv(url)
 
     return output
-
+'''
+simulating adding to database
+'''
+@app.post("/items/", status_code=201)
+async def create_item(name: str):
+    return {"name": name}
