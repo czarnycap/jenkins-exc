@@ -3,7 +3,12 @@ pipeline {
 	docker { image 'node:16.13.1-alpine' }
 } 
     stages {
-        stage('Get') {
+        stage('Build environment') {
+            steps {
+                echo 'get latest codebase' 
+            }
+        }        
+        stage('Checkout') {
             steps {
                 echo 'get latest codebase' 
             }
