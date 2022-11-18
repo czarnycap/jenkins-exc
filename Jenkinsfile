@@ -3,15 +3,29 @@ pipeline {
 	docker { image 'node:16.13.1-alpine' }
 } 
     stages {
+        stage('Get') {
+            steps {
+                echo 'get latest codebase' 
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building!' 
+                echo "build or compile"
             }
         }
         stage('Test') {
             steps {
-                echo "testing!!!!!111one"
+                echo "test sonnar scanner"
             }
         }
+        stage('Package'){
+            steps {
+                echo "put to Nexus"
+            }
+        }
+
+
+
+
     }
 }
