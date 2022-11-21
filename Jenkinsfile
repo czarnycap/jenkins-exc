@@ -6,7 +6,7 @@ pipeline {
         stage('Build environment') {
             steps {
                 echo "hostname is " 
-                hostname 
+                sh hostname 
             }
         }        
         stage('Checkout') {
