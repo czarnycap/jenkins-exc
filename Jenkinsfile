@@ -5,7 +5,8 @@ pipeline {
     stages {
         stage('Build environment') {
             steps {
-                echo 'get latest codebase' 
+                echo "hostname is " 
+                hostname 
             }
         }        
         stage('Checkout') {
