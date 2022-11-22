@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-	any
-} 
+    agent  any
+ 
     stages {
         stage('setup environment') {
             steps {
@@ -28,9 +27,5 @@ pipeline {
                 echo "put to Nexus"
             }
         }
-
-
-
-
     }
 }
