@@ -1,11 +1,10 @@
 pipeline {
     agent {
-	docker { image 'node:16.13.1-alpine' }
+	any
 } 
     stages {
-        stage('Build environment') {
+        stage('setup environment') {
             steps {
-                echo "hostname is " 
                 sh hostname 
             }
         }        
