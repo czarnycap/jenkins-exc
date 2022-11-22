@@ -10,6 +10,7 @@ services:
       - jenkinsnet
     volumes:
       - jenkins_home_cicd:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
 #todo artifactory
   # artifactory:
   #   image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
