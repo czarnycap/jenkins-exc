@@ -1,17 +1,23 @@
 version: "3.3"
 services:
-  jenkins:
-    image: jenkins/jenkins
-    container_name: jenkins_cicd
-    ports: 
-      - 50000:50000
-      - 8080:8080
+  # jenkins:
+  #   image: jenkins_with_docker 
+  #   container_name: jenkins_cicd
+  #   ports: 
+  #     - 50000:50000
+  #     - 8080:8080
+  #   networks:
+  #     - jenkinsnet
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     # - /usr/bin/docker:/usr/bin/docker
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus3_jenkins
+    ports:
+      - 8081:8081
     networks:
       - jenkinsnet
-    volumes:
-      - jenkins_home_cicd:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-      # - /usr/bin/docker:/usr/bin/docker
 #todo artifactory
   # artifactory:
   #   image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
@@ -68,8 +74,6 @@ services:
     depends_on:
       - postgressonar
 volumes:
-  jenkins_home_cicd:
-    external: true
   postgresql_artifactory:
     external: true
   postgresql_sonar:

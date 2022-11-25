@@ -1,3 +1,7 @@
+nexus3
+admin: admin
+pw: akowal
+
 jenkinsdocker
 admin: akowal
 pw: akowal
