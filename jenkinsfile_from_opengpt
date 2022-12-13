@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the code from Git.
+                git 'https://github.com/my-user/my-repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Build the Node.js application.
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run the tests for the Node.js application.
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Build the Docker image for the Node.js application.
+                sh 'docker build -t my-nodejs-app .'
+
+                // Run the Docker image.
+                sh 'docker run -p 8080:8080 my-nodejs-app'
+            }
+        }
+    }
+}
