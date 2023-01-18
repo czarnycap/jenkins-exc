@@ -1,29 +1,49 @@
-<mxfile host="app.diagrams.net" modified="2023-01-17T08:05:48.567Z" agent="5.0 (Windows)" version="20.8.5" etag="NDwCZ5L0fxtH2FurPXtJ" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-17T12:50:24.616Z" agent="5.0 (Windows)" version="20.8.5" etag="B01DbPu-9gPgZXxhbXB6" type="github">
   <diagram id="zLyevtB7APUDjZa6CcbD" name="Page-1">
     <mxGraphModel dx="1434" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="3y6Dgdou_BlMhma2LoOi-1" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/generic_server.svg;" vertex="1" parent="1">
-          <mxGeometry x="190" y="290" width="28.000000000000004" height="50" as="geometry" />
+          <mxGeometry x="70" y="320" width="28.000000000000004" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3y6Dgdou_BlMhma2LoOi-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="240" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="3y6Dgdou_BlMhma2LoOi-2" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/generic_server.svg;" vertex="1" parent="1">
           <mxGeometry x="600" y="280" width="28.000000000000004" height="50" as="geometry" />
         </mxCell>
         <mxCell id="3y6Dgdou_BlMhma2LoOi-3" value="xubuntu1" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="170" y="350" width="60" height="30" as="geometry" />
+          <mxGeometry x="54" y="370" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3y6Dgdou_BlMhma2LoOi-4" value="xubuntu2" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="584" y="340" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3y6Dgdou_BlMhma2LoOi-5" value="Server contents" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#5A6C86;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6C86;dashed=0;" vertex="1" parent="1">
-          <mxGeometry x="150" y="120" width="130" height="130" as="geometry" />
-        </mxCell>
         <mxCell id="3y6Dgdou_BlMhma2LoOi-6" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;" vertex="1" parent="1">
-          <mxGeometry x="50" y="344.5" width="50" height="41" as="geometry" />
+          <mxGeometry x="30" y="389" width="50" height="41" as="geometry" />
         </mxCell>
-        <mxCell id="3y6Dgdou_BlMhma2LoOi-7" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.reverse_proxy;" vertex="1" parent="1">
-          <mxGeometry x="433" y="287" width="41" height="53" as="geometry" />
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-11" value="Local services&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="584" y="380" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-12" value="Jenkins 8080" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3y6Dgdou_BlMhma2LoOi-11">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-13" value="&lt;div&gt;apache p:80&lt;/div&gt;&lt;div&gt;nginx p:80 (disabled)&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3y6Dgdou_BlMhma2LoOi-11">
+          <mxGeometry y="60" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-15" value="&lt;div&gt;Docker compose&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="430" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-16" value="sonatype/nexus 3 port:8081" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3y6Dgdou_BlMhma2LoOi-15">
+          <mxGeometry x="15" y="30" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-17" value="&lt;div align=&quot;left&quot;&gt;postgressonar&lt;br&gt;&lt;/div&gt;&lt;div&gt;sonarqube p:9000 p:9092&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3y6Dgdou_BlMhma2LoOi-15">
+          <mxGeometry x="15" y="50" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3y6Dgdou_BlMhma2LoOi-18" value="Jenkins node xubuntu1" style="label;whiteSpace=wrap;html=1;image=img/clipart/Gear_128x128.png" vertex="1" parent="1">
+          <mxGeometry y="260" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
